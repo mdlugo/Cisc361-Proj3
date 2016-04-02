@@ -1,0 +1,908 @@
+Script started on Fri 11 Mar 2016 03:57:42 AM UTC
+]0;ubuntu@kysully-cisc361-proj2-2655436: ~/workspace[01;32mkysully[00m:[01;34m~/workspace[00m $ ./mysh
+ [/home/ubuntu/workspace]> exit
+]0;ubuntu@kysully-cisc361-proj2-2655436: ~/workspace[01;32mkysully[00m:[01;34m~/workspace[00m $ ./mysh
+ [/home/ubuntu/workspace]> setenv ignoreeof 1
+Executing built-in [setenv]
+ [/home/ubuntu/workspace]>  ^D
+Use "exit" to leave mysh.
+ [/home/ubuntu/workspace]> ^X  ^C
+ [/home/ubuntu/workspace]> which
+Executing built-in [which]
+Usage: which <command>
+ [/home/ubuntu/workspace]> which ls
+Executing built-in [which]
+/bin/ls
+ [/home/ubuntu/workspace]> ls
+#testFile2#  get_path.c  get_path_main.c  hello      homework1.c  main.c       mysh  sh.o      strmap.o     testScript3  wildcard.c
+README.md    get_path.h  globtest	  hello.c    infloop	  makefile     sh.c  strmap.c  testScript1  testruns
+TestRuns     get_path.o  globtest.c	  homework1  infloop.c	  mycp_script  sh.h  strmap.h  testScript2  wildcard
+ [/home/ubuntu/workspace]> 
+ [/home/ubuntu/workspace]>  ^D
+Use "exit" to leave mysh.
+ [/home/ubuntu/workspace]> ^X  ^C
+ [/home/ubuntu/workspace]> ls -l
+total 292
+-rw-r--r-- 1 ubuntu ubuntu  3703 Mar 11 01:06 #testFile2#
+-rwxrwxr-x 1 ubuntu ubuntu  1005 Sep 30 13:29 README.md
+-rw-r--r-- 1 ubuntu ubuntu     0 Mar 11 03:51 TestRuns
+-rw-r--r-- 1 ubuntu ubuntu  1468 Mar  9 00:43 get_path.c
+-rw-r--r-- 1 ubuntu ubuntu   380 Mar  1 01:28 get_path.h
+-rw-r--r-- 1 ubuntu ubuntu  4432 Mar  9 00:43 get_path.o
+-rw-r--r-- 1 ubuntu ubuntu   458 Mar  1 01:28 get_path_main.c
+-rwxr-xr-x 1 ubuntu ubuntu  8688 Mar  9 01:10 globtest
+-rw-r--r-- 1 ubuntu ubuntu  1079 Mar  9 01:10 globtest.c
+-rwxr-xr-x 1 ubuntu ubuntu  9553 Mar  6 23:12 hello
+-rw-r--r-- 1 ubuntu ubuntu    84 Mar  6 23:11 hello.c
+-rwxr-xr-x 1 ubuntu ubuntu  9201 Mar 11 02:01 homework1
+-rw-r--r-- 1 ubuntu ubuntu  2067 Mar 11 02:01 homework1.c
+-rwxr-xr-x 1 ubuntu ubuntu  8554 Mar 11 01:03 infloop
+-rw-r--r-- 1 ubuntu ubuntu    50 Mar 11 01:02 infloop.c
+-rw-r--r-- 1 ubuntu ubuntu   958 Mar 11 02:41 main.c
+-rw-r--r-- 1 ubuntu ubuntu   381 Mar  5 00:18 makefile
+-rw-r--r-- 1 ubuntu ubuntu   791 Mar  1 01:28 mycp_script
+-rwxr-xr-x 1 ubuntu ubuntu 40486 Mar 11 03:53 mysh
+-rw-r--r-- 1 ubuntu ubuntu 20255 Mar 11 03:54 sh.c
+-rw-r--r-- 1 ubuntu ubuntu  1193 Mar 11 03:53 sh.h
+-rw-r--r-- 1 ubuntu ubuntu 37912 Mar 11 03:53 sh.o
+-rw-r--r-- 1 ubuntu ubuntu 15153 Mar  4 23:34 strmap.c
+-rw-r--r-- 1 ubuntu ubuntu 13297 Mar  4 23:34 strmap.h
+-rw-r--r-- 1 ubuntu ubuntu 10280 Mar  5 00:18 strmap.o
+-rw-r--r-- 1 ubuntu ubuntu  8890 Mar 11 02:05 testScript1
+-rw-r--r-- 1 ubuntu ubuntu  6715 Mar 11 02:19 testScript2
+-rw-r--r-- 1 ubuntu ubuntu  4096 Mar 11 03:45 testScript3
+-rw-r--r-- 1 ubuntu ubuntu     0 Mar 11 03:57 testruns
+-rwxr-xr-x 1 ubuntu ubuntu  8556 Mar  8 17:41 wildcard
+-rw-r--r-- 1 ubuntu ubuntu   140 Mar  8 17:42 wildcard.c
+ [/home/ubuntu/workspace]> ls -l -F /etc/rpc
+-rw-r--r-- 1 root root 887 Dec 30  2013 /etc/rpc
+ [/home/ubuntu/workspace]> ls -l -a /etc/rpc
+-rw-r--r-- 1 root root 887 Dec 30  2013 /etc/rpc
+ [/home/ubuntu/workspace]> where
+Executing built-in [where]
+Usage: where <command>
+ [/home/ubuntu/workspace]> where ls
+Executing built-in [where]
+/bin/ls
+/mnt/shared/sbin/ls
+ [/home/ubuntu/workspace]> /mnt/shared/sbin/ls -l -g
+total 292
+-rw-r--r-- 1 ubuntu  3703 Mar 11 01:06 #testFile2#
+-rwxrwxr-x 1 ubuntu  1005 Sep 30 13:29 README.md
+-rw-r--r-- 1 ubuntu     0 Mar 11 03:51 TestRuns
+-rw-r--r-- 1 ubuntu  1468 Mar  9 00:43 get_path.c
+-rw-r--r-- 1 ubuntu   380 Mar  1 01:28 get_path.h
+-rw-r--r-- 1 ubuntu  4432 Mar  9 00:43 get_path.o
+-rw-r--r-- 1 ubuntu   458 Mar  1 01:28 get_path_main.c
+-rwxr-xr-x 1 ubuntu  8688 Mar  9 01:10 globtest
+-rw-r--r-- 1 ubuntu  1079 Mar  9 01:10 globtest.c
+-rwxr-xr-x 1 ubuntu  9553 Mar  6 23:12 hello
+-rw-r--r-- 1 ubuntu    84 Mar  6 23:11 hello.c
+-rwxr-xr-x 1 ubuntu  9201 Mar 11 02:01 homework1
+-rw-r--r-- 1 ubuntu  2067 Mar 11 02:01 homework1.c
+-rwxr-xr-x 1 ubuntu  8554 Mar 11 01:03 infloop
+-rw-r--r-- 1 ubuntu    50 Mar 11 01:02 infloop.c
+-rw-r--r-- 1 ubuntu   958 Mar 11 02:41 main.c
+-rw-r--r-- 1 ubuntu   381 Mar  5 00:18 makefile
+-rw-r--r-- 1 ubuntu   791 Mar  1 01:28 mycp_script
+-rwxr-xr-x 1 ubuntu 40486 Mar 11 03:53 mysh
+-rw-r--r-- 1 ubuntu 20255 Mar 11 03:54 sh.c
+-rw-r--r-- 1 ubuntu  1193 Mar 11 03:53 sh.h
+-rw-r--r-- 1 ubuntu 37912 Mar 11 03:53 sh.o
+-rw-r--r-- 1 ubuntu 15153 Mar  4 23:34 strmap.c
+-rw-r--r-- 1 ubuntu 13297 Mar  4 23:34 strmap.h
+-rw-r--r-- 1 ubuntu 10280 Mar  5 00:18 strmap.o
+-rw-r--r-- 1 ubuntu  8890 Mar 11 02:05 testScript1
+-rw-r--r-- 1 ubuntu  6715 Mar 11 02:19 testScript2
+-rw-r--r-- 1 ubuntu  4096 Mar 11 03:45 testScript3
+-rw-r--r-- 1 ubuntu     0 Mar 11 03:57 testruns
+-rwxr-xr-x 1 ubuntu  8556 Mar  8 17:41 wildcard
+-rw-r--r-- 1 ubuntu   140 Mar  8 17:42 wildcard.c
+ [/home/ubuntu/workspace]> /mnt/shared/sbin/ls -l
+total 296
+-rw-r--r-- 1 ubuntu ubuntu  3703 Mar 11 01:06 #testFile2#
+-rwxrwxr-x 1 ubuntu ubuntu  1005 Sep 30 13:29 README.md
+-rw-r--r-- 1 ubuntu ubuntu     0 Mar 11 03:51 TestRuns
+-rw-r--r-- 1 ubuntu ubuntu  1468 Mar  9 00:43 get_path.c
+-rw-r--r-- 1 ubuntu ubuntu   380 Mar  1 01:28 get_path.h
+-rw-r--r-- 1 ubuntu ubuntu  4432 Mar  9 00:43 get_path.o
+-rw-r--r-- 1 ubuntu ubuntu   458 Mar  1 01:28 get_path_main.c
+-rwxr-xr-x 1 ubuntu ubuntu  8688 Mar  9 01:10 globtest
+-rw-r--r-- 1 ubuntu ubuntu  1079 Mar  9 01:10 globtest.c
+-rwxr-xr-x 1 ubuntu ubuntu  9553 Mar  6 23:12 hello
+-rw-r--r-- 1 ubuntu ubuntu    84 Mar  6 23:11 hello.c
+-rwxr-xr-x 1 ubuntu ubuntu  9201 Mar 11 02:01 homework1
+-rw-r--r-- 1 ubuntu ubuntu  2067 Mar 11 02:01 homework1.c
+-rwxr-xr-x 1 ubuntu ubuntu  8554 Mar 11 01:03 infloop
+-rw-r--r-- 1 ubuntu ubuntu    50 Mar 11 01:02 infloop.c
+-rw-r--r-- 1 ubuntu ubuntu   958 Mar 11 02:41 main.c
+-rw-r--r-- 1 ubuntu ubuntu   381 Mar  5 00:18 makefile
+-rw-r--r-- 1 ubuntu ubuntu   791 Mar  1 01:28 mycp_script
+-rwxr-xr-x 1 ubuntu ubuntu 40486 Mar 11 03:53 mysh
+-rw-r--r-- 1 ubuntu ubuntu 20360 Mar 11 04:00 sh.c
+-rw-r--r-- 1 ubuntu ubuntu  1193 Mar 11 03:53 sh.h
+-rw-r--r-- 1 ubuntu ubuntu 37912 Mar 11 03:53 sh.o
+-rw-r--r-- 1 ubuntu ubuntu 15153 Mar  4 23:34 strmap.c
+-rw-r--r-- 1 ubuntu ubuntu 13297 Mar  4 23:34 strmap.h
+-rw-r--r-- 1 ubuntu ubuntu 10280 Mar  5 00:18 strmap.o
+-rw-r--r-- 1 ubuntu ubuntu  8890 Mar 11 02:05 testScript1
+-rw-r--r-- 1 ubuntu ubuntu  6715 Mar 11 02:19 testScript2
+-rw-r--r-- 1 ubuntu ubuntu  4096 Mar 11 03:45 testScript3
+-rw-r--r-- 1 ubuntu ubuntu  4096 Mar 11 04:00 testruns
+-rwxr-xr-x 1 ubuntu ubuntu  8556 Mar  8 17:41 wildcard
+-rw-r--r-- 1 ubuntu ubuntu   140 Mar  8 17:42 wildcard.c
+ [/home/ubuntu/workspace]> /bin/ls -l -g
+total 296
+-rw-r--r-- 1 ubuntu  3703 Mar 11 01:06 #testFile2#
+-rwxrwxr-x 1 ubuntu  1005 Sep 30 13:29 README.md
+-rw-r--r-- 1 ubuntu     0 Mar 11 03:51 TestRuns
+-rw-r--r-- 1 ubuntu  1468 Mar  9 00:43 get_path.c
+-rw-r--r-- 1 ubuntu   380 Mar  1 01:28 get_path.h
+-rw-r--r-- 1 ubuntu  4432 Mar  9 00:43 get_path.o
+-rw-r--r-- 1 ubuntu   458 Mar  1 01:28 get_path_main.c
+-rwxr-xr-x 1 ubuntu  8688 Mar  9 01:10 globtest
+-rw-r--r-- 1 ubuntu  1079 Mar  9 01:10 globtest.c
+-rwxr-xr-x 1 ubuntu  9553 Mar  6 23:12 hello
+-rw-r--r-- 1 ubuntu    84 Mar  6 23:11 hello.c
+-rwxr-xr-x 1 ubuntu  9201 Mar 11 02:01 homework1
+-rw-r--r-- 1 ubuntu  2067 Mar 11 02:01 homework1.c
+-rwxr-xr-x 1 ubuntu  8554 Mar 11 01:03 infloop
+-rw-r--r-- 1 ubuntu    50 Mar 11 01:02 infloop.c
+-rw-r--r-- 1 ubuntu   958 Mar 11 02:41 main.c
+-rw-r--r-- 1 ubuntu   381 Mar  5 00:18 makefile
+-rw-r--r-- 1 ubuntu   791 Mar  1 01:28 mycp_script
+-rwxr-xr-x 1 ubuntu 40486 Mar 11 03:53 mysh
+-rw-r--r-- 1 ubuntu 20360 Mar 11 04:00 sh.c
+-rw-r--r-- 1 ubuntu  1193 Mar 11 03:53 sh.h
+-rw-r--r-- 1 ubuntu 37912 Mar 11 03:53 sh.o
+-rw-r--r-- 1 ubuntu 15153 Mar  4 23:34 strmap.c
+-rw-r--r-- 1 ubuntu 13297 Mar  4 23:34 strmap.h
+-rw-r--r-- 1 ubuntu 10280 Mar  5 00:18 strmap.o
+-rw-r--r-- 1 ubuntu  8890 Mar 11 02:05 testScript1
+-rw-r--r-- 1 ubuntu  6715 Mar 11 02:19 testScript2
+-rw-r--r-- 1 ubuntu  4096 Mar 11 03:45 testScript3
+-rw-r--r-- 1 ubuntu  4096 Mar 11 04:00 testruns
+-rwxr-xr-x 1 ubuntu  8556 Mar  8 17:41 wildcard
+-rw-r--r-- 1 ubuntu   140 Mar  8 17:42 wildcard.c
+ [/home/ubuntu/workspace]> /bin/ls -l
+total 300
+-rw-r--r-- 1 ubuntu ubuntu  3703 Mar 11 01:06 #testFile2#
+-rwxrwxr-x 1 ubuntu ubuntu  1005 Sep 30 13:29 README.md
+-rw-r--r-- 1 ubuntu ubuntu     0 Mar 11 03:51 TestRuns
+-rw-r--r-- 1 ubuntu ubuntu  1468 Mar  9 00:43 get_path.c
+-rw-r--r-- 1 ubuntu ubuntu   380 Mar  1 01:28 get_path.h
+-rw-r--r-- 1 ubuntu ubuntu  4432 Mar  9 00:43 get_path.o
+-rw-r--r-- 1 ubuntu ubuntu   458 Mar  1 01:28 get_path_main.c
+-rwxr-xr-x 1 ubuntu ubuntu  8688 Mar  9 01:10 globtest
+-rw-r--r-- 1 ubuntu ubuntu  1079 Mar  9 01:10 globtest.c
+-rwxr-xr-x 1 ubuntu ubuntu  9553 Mar  6 23:12 hello
+-rw-r--r-- 1 ubuntu ubuntu    84 Mar  6 23:11 hello.c
+-rwxr-xr-x 1 ubuntu ubuntu  9201 Mar 11 02:01 homework1
+-rw-r--r-- 1 ubuntu ubuntu  2067 Mar 11 02:01 homework1.c
+-rwxr-xr-x 1 ubuntu ubuntu  8554 Mar 11 01:03 infloop
+-rw-r--r-- 1 ubuntu ubuntu    50 Mar 11 01:02 infloop.c
+-rw-r--r-- 1 ubuntu ubuntu   958 Mar 11 02:41 main.c
+-rw-r--r-- 1 ubuntu ubuntu   381 Mar  5 00:18 makefile
+-rw-r--r-- 1 ubuntu ubuntu   791 Mar  1 01:28 mycp_script
+-rwxr-xr-x 1 ubuntu ubuntu 40486 Mar 11 03:53 mysh
+-rw-r--r-- 1 ubuntu ubuntu 20360 Mar 11 04:00 sh.c
+-rw-r--r-- 1 ubuntu ubuntu  1193 Mar 11 03:53 sh.h
+-rw-r--r-- 1 ubuntu ubuntu 37912 Mar 11 03:53 sh.o
+-rw-r--r-- 1 ubuntu ubuntu 15153 Mar  4 23:34 strmap.c
+-rw-r--r-- 1 ubuntu ubuntu 13297 Mar  4 23:34 strmap.h
+-rw-r--r-- 1 ubuntu ubuntu 10280 Mar  5 00:18 strmap.o
+-rw-r--r-- 1 ubuntu ubuntu  8890 Mar 11 02:05 testScript1
+-rw-r--r-- 1 ubuntu ubuntu  6715 Mar 11 02:19 testScript2
+-rw-r--r-- 1 ubuntu ubuntu  4096 Mar 11 03:45 testScript3
+-rw-r--r-- 1 ubuntu ubuntu  8192 Mar 11 04:00 testruns
+-rwxr-xr-x 1 ubuntu ubuntu  8556 Mar  8 17:41 wildcard
+-rw-r--r-- 1 ubuntu ubuntu   140 Mar  8 17:42 wildcard.c
+ [/home/ubuntu/workspace]> file *
+#testFile2#:     ASCII text, with CRLF, LF line terminators, with escape sequences, with overstriking
+README.md:       ASCII text
+TestRuns:        empty 
+get_path.c:      C source, ASCII text, with CRLF line terminators
+get_path.h:      C source, ASCII text, with CRLF line terminators
+get_path.o:      ELF 64-bit LSB  relocatable, x86-64, version 1 (SYSV), not stripped
+get_path_main.c: C source, ASCII text, with CRLF line terminators
+globtest:        ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=5d71d958b63b5ecc9cb0ac85604e54ff57c39430, not stripped
+globtest.c:      C source, ASCII text
+hello:           ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=a496619e5b361c3a67f06ab6c28c1783cd60252c, not stripped
+hello.c:         C source, ASCII text
+homework1:       ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=8a8e08eb7247688adcf6c00cfa554822efd74fd6, not stripped
+homework1.c:     C source, ASCII text
+infloop:         ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=1178625f6d6eb92553ab388ca166ae1e6fbc46a6, not stripped
+infloop.c:       C source, ASCII text
+main.c:          C source, ASCII text, with CRLF line terminators
+makefile:        ASCII text
+mycp_script:     ASCII text, with CRLF, CR, LF line terminators, with escape sequences
+mysh:            ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=4934f7a06c1a3ddd2d74aee6eaeb28df17765ceb, not stripped
+sh.c:            C source, ASCII text, with CRLF line terminators
+sh.h:            C source, ASCII text, with CRLF line terminators
+sh.o:            ELF 64-bit LSB  relocatable, x86-64, version 1 (SYSV), not stripped
+strmap.c:        C source, ASCII text, with CRLF line terminators
+strmap.h:        C source, ASCII text, with CRLF line terminators
+strmap.o:        ELF 64-bit LSB  relocatable, x86-64, version 1 (SYSV), not stripped
+testScript1:     data
+testScript2:     ASCII text, with escape sequences, with overstriking
+testScript3:     C source, UTF-8 Unicode text, with CRLF, CR, LF line terminators, with escape sequences, with overstriking
+testruns:        ASCII text, with CRLF, LF line terminators, with escape sequences, with overstriking
+wildcard:        ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=efcbad44f13bb0387f5f05a34da782e839343c2d, not stripped
+wildcard.c:      C source, ASCII text
+ [/home/ubuntu/workspace]> ls *
+#testFile2#  get_path.c  get_path_main.c  hello      homework1.c  main.c       mysh  sh.o      strmap.o     testScript3  wildcard.c
+README.md    get_path.h  globtest	  hello.c    infloop	  makefile     sh.c  strmap.c  testScript1  testruns
+TestRuns     get_path.o  globtest.c	  homework1  infloop.c	  mycp_script  sh.h  strmap.h  testScript2  wildcard
+ [/home/ubuntu/workspace]> ls *.c
+get_path.c  get_path_main.c  globtest.c  hello.c  homework1.c  infloop.c  main.c  sh.c	strmap.c  wildcard.c
+ [/home/ubuntu/workspace]> ls -l sh.*
+-rw-r--r-- 1 ubuntu ubuntu 20481 Mar 11 04:01 sh.c
+-rw-r--r-- 1 ubuntu ubuntu  1193 Mar 11 03:53 sh.h
+-rw-r--r-- 1 ubuntu ubuntu 37912 Mar 11 03:53 sh.o
+ [/home/ubuntu/workspace]> ls -l s*.c
+-rw-r--r-- 1 ubuntu ubuntu 20481 Mar 11 04:01 sh.c
+-rw-r--r-- 1 ubuntu ubuntu 15153 Mar  4 23:34 strmap.c
+ [/home/ubuntu/workspace]> ls -l s*h.c
+-rw-r--r-- 1 ubuntu ubuntu 20644 Mar 11 04:01 sh.c
+ [/home/ubuntu/workspace]> ls sh.?
+sh.c  sh.h  sh.o
+ [/home/ubuntu/workspace]> ls ?h.c
+sh.c
+ [/home/ubuntu/workspace]> ls *.?
+get_path.c  get_path.o	     globtest.c  homework1.c  main.c  sh.h  strmap.c  strmap.o
+get_path.h  get_path_main.c  hello.c	 infloop.c    sh.c    sh.o  strmap.h  wildcard.c
+ [/home/ubuntu/workspace]> blah
+blah: Command not found.
+ [/home/ubuntu/workspace]> /blah
+/blah: Command not found.
+ [/home/ubuntu/workspace]> ls -l /blah
+ls: cannot access /blah: No such file or directory
+ [/home/ubuntu/workspace]> /bin
+Permission denied
+ [/home/ubuntu/workspace]> /bin/ls -la /
+total 100
+drwxr-xr-x  224 root root  4096 Mar 10 09:14 .
+drwxr-xr-x  224 root root  4096 Mar 10 09:14 ..
+-rwxr-xr-x    1 root root     0 Mar  1 01:25 .dockerenv
+-rwxr-xr-x    1 root root     0 Mar  1 01:25 .dockerinit
+drwxr-xr-x    2 root root  4096 Mar 11 00:55 bin
+drwxr-xr-x    2 root root  4096 Apr 10  2014 boot
+drwxr-xr-x    3 root root  4096 Jan 14 14:38 build
+drwxr-xr-x    3 root root  4096 Jan 14 14:44 data
+drwxr-xr-x    5 root root   380 Mar 10 09:14 dev
+drwxr-xr-x  289 root root  4096 Mar 10 09:14 etc
+drwxr-xr-x   15 root root  4096 Mar  1 01:25 home
+drwxr-xr-x   25 root root  4096 Jan 14 14:38 lib
+drwxr-xr-x    2 root root  4096 Dec 18 05:58 lib64
+drwx------    2 root root 16384 Mar  1 01:25 lost+found
+drwxr-xr-x    2 root root  4096 Dec 18 05:58 media
+drwxr-xr-x    3 root root  4096 Mar  1 01:25 mnt
+drwxr-xr-x   10 root root  4096 Mar  9 23:33 nix
+drwxr-xr-x    4 root root  4096 Jan 14 14:43 opt
+dr-xr-xr-x 4319 root root     0 Mar 10 09:14 proc
+drwx------    4 root root  4096 Mar  1 01:25 root
+drwxr-xr-x   14 root root  4096 Mar  3 17:44 run
+drwxr-xr-x    2 root root  4096 Mar 11 00:55 sbin
+drwxr-xr-x    2 root root  4096 Dec 18 05:58 srv
+dr-xr-xr-x   13 root root     0 Mar 11 03:32 sys
+drwxrwxrwx   11 root root  4096 Mar 11 03:59 tmp
+drwxr-xr-x  131 root root  4096 Mar  3 17:44 usr
+drwxr-xr-x  101 root root  4096 Mar  3 17:44 var
+ [/home/ubuntu/workspace]> file /bin/ls /bin/rm
+/bin/ls: ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=bd39c07194a778ccc066fc963ca152bdfaa3f971, stripped
+/bin/rm: ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=dc9c16f6f256a5c5c6ab479e25f0079bec171c4a, stripped
+ [/home/ubuntu/workspace]> which ls
+Executing built-in [which]
+/bin/ls
+ [/home/ubuntu/workspace]> where ls rm
+Executing built-in [where]
+/bin/ls
+/mnt/shared/sbin/ls
+/bin/rm
+/mnt/shared/sbin/rm
+ [/home/ubuntu/workspace]> which ls rm
+Executing built-in [which]
+/bin/ls
+/bin/rm
+ [/home/ubuntu/workspace]> list
+Executing built-in [list]
+
+[/home/ubuntu/workspace]:
+testScript3
+strmap.c
+sh.o
+.c9
+strmap.h
+#testFile2#
+wildcard.c
+globtest.c
+globtest
+hello
+..
+TestRuns
+sh.c
+hello.c
+main.c
+get_path.c
+.
+homework1
+mycp_script
+get_path_main.c
+get_path.h
+testScript1
+infloop.c
+homework1.c
+infloop
+strmap.o
+sh.h
+get_path.o
+mysh
+testScript2
+wildcard
+testruns
+makefile
+README.md
+ [/home/ubuntu/workspace]> list / /bin
+Executing built-in [list]
+
+[/]:
+mnt
+lost+found
+bin
+root
+etc
+var
+usr
+..
+run
+.
+nix
+home
+sbin
+tmp
+.dockerinit
+.dockerenv
+dev
+data
+opt
+build
+lib
+srv
+sys
+boot
+lib64
+proc
+media
+
+[/bin]:
+dmesg
+tcsh
+csh
+..
+sync
+.
+fgetty-login
+checkpassword
+fgetty-login2
+rnano
+nano
+ulockmgr_server
+ntfscluster
+getfacl
+lowntfs-3g
+ntfs-3g.probe
+ntfsmove
+fusermount
+fuser
+dbus-daemon
+ntfs-3g.secaudit
+chacl
+ntfsmftalloc
+ntfscmp
+ntfs-3g
+dbus-cleanup-sockets
+ntfstruncate
+ntfs-3g.usermap
+ntfsinfo
+ntfsfix
+ntfsls
+ntfswipe
+loginctl
+dbus-uuidgen
+ntfsdump_logfile
+ntfsck
+ntfscat
+setfacl
+zdiff
+zegrep
+ln
+plymouth-upstart-bridge
+dir
+grep
+chmod
+gzexe
+whiptail
+bzip2recover
+chown
+ping6
+bash
+zforce
+netcat
+mknod
+egrep
+bzegrep
+cpio
+bunzip2
+tailf
+mv
+sh.distrib
+zcat
+su
+login
+mkdir
+zless
+bzless
+readlink
+run-parts
+pidof
+fgconsole
+kmod
+gzip
+setupcon
+loadkeys
+mountpoint
+lesspipe
+dumpkeys
+gunzip
+sed
+zmore
+bzgrep
+more
+nc
+vdir
+lsblk
+touch
+open
+mount
+false
+tempfile
+fgrep
+zgrep
+true
+rbash
+ypdomainname
+dd
+chgrp
+df
+bzfgrep
+dash
+lessecho
+running-in-container
+udevadm
+sh
+pwd
+nc.openbsd
+zfgrep
+dnsdomainname
+findmnt
+cp
+ps
+lessfile
+ip
+chvt
+netstat
+openvt
+setfont
+kill
+bzmore
+less
+stty
+uncompress
+tar
+ls
+zcmp
+bzcat
+bzdiff
+znew
+bzexe
+bzip2
+uname
+date
+bzcmp
+ping
+plymouth
+which
+mt-gnu
+nisdomainname
+kbd_mode
+mktemp
+umount
+lsmod
+lesskey
+sleep
+unicode_start
+hostname
+domainname
+rm
+rmdir
+mt
+ss
+cat
+echo
+ [/home/ubuntu/workspace]> cd
+Executing built-in [cd]
+ [/home/ubuntu]> pwd
+Executing built-in [pwd]
+/home/ubuntu
+ [/home/ubuntu]> cd /blah
+Executing built-in [cd]
+/blah: No such file or directory
+ [/home/ubuntu]> cd /bin /home
+Executing built-in [cd]
+Usage: cd <directory>
+ [/home/ubuntu]> cd -
+Executing built-in [cd]
+ [/home/ubuntu/workspace]> pwd
+Executing built-in [pwd]
+/home/ubuntu/workspace
+ [/home/ubuntu/workspace]> more sh.c
+/*
+ * Melody Lugo and Kyle Sullivan
+ * Assignment #2 - sh.c
+ */
+
+#include <stdio.h>
+#include <string.h>
+#include <strings.h>
+#include <limits.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <pwd.h>
+#include <dirent.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <signal.h>
+#include <glob.h>
+#include <time.h>
+#include <sys/time.h>
+#include "sh.h"
+#include "strmap.h"
+
+char *prompt, *commandline;
+char *command, *arg, *commandpath, *p, *pwd, *owd;
+char **args; 
+int uid, i, status, argsct, aliasct;
+int historyct = 0, go = 1, timeout = 0, timeout_completed = 0, child_pid = 0, interruptFlag = 0;
+struct passwd *password_entry;
+char *homedir;
+char prev_wd[1024];
+char **history;
+char cwd[1024];
+extern char **environ;
+struct pathelement *pathlist;
+typedef enum { false, true } bool;
+
+//char ***alias_table;
+//int *alias_table_ct;
+//to store the alias information
+StrMap *alias_table;
+char buf[255];
+
+int sh( int argc, char **argv, char **envp )
+{
+  prompt         = calloc(PROMPTMAX, sizeof(char)); //moved to make global
+  commandline    = calloc(MAX_CANON, sizeof(char));
+  args           = calloc(MAXARGS, sizeof(char*));
+  history        = calloc(MAXHISTORY, sizeof(char*));
+
+  alias_table = sm_new(MAXALIAS);
+  if (alias_table == NULL) {
+    /* Handle allocation failure... */
+    fprintf(stderr, "The string map did not allocate for the alias table...\n");
+    return -1;
+  }
+
+  if(argc > 1){
+    timeout = atoi(argv[1]);
+  }else{
+[7m--More--(7%)[27m
+[K [/home/ubuntu/workspace]> cd /bin
+Executing built-in [cd]
+ [/bin]> pwd
+Executing built-in [pwd]
+/bin
+ [/bin]> ./ls /
+bin  boot  build  data	dev  etc  home	lib  lib64  lost+found	media  mnt  nix  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+ [/bin]> ../bin/ls /
+bin  boot  build  data	dev  etc  home	lib  lib64  lost+found	media  mnt  nix  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+ [/bin]> history
+Executing built-in [history]
+cd /blah
+cd /bin /home
+cd -
+pwd
+more sh.c
+cd /bin
+pwd
+./ls /
+../bin/ls /
+history
+ [/bin]> history 15
+Executing built-in [history]
+list
+list / /bin
+cd
+pwd
+cd /blah
+cd /bin /home
+cd -
+pwd
+more sh.c
+cd /bin
+pwd
+./ls /
+../bin/ls /
+history
+history 15
+ [/bin]> history
+Executing built-in [history]
+cd -
+pwd
+more sh.c
+cd /bin
+pwd
+./ls /
+../bin/ls /
+history
+history 15
+history
+ [/bin]> history 5
+Executing built-in [history]
+../bin/ls /
+history
+history 15
+history
+history 5
+ [/bin]> history
+Executing built-in [history]
+more sh.c
+cd /bin
+pwd
+./ls /
+../bin/ls /
+history
+history 15
+history
+history 5
+history
+ [/bin]> pid
+Executing built-in [pid]
+12784
+ [/bin]> kill
+Executing built-in [kill]
+Usage: kill [options] <pid>
+ [/bin]> kill 12784
+Executing built-in [kill]
+Terminated
+]0;ubuntu@kysully-cisc361-proj2-2655436: ~/workspace[01;32mkysully[00m:[01;34m~/workspace[00m $ ./mysh
+ [/home/ubuntu/workspace]> pid
+Executing built-in [pid]
+12867
+ [/home/ubuntu/workspace]> kill -1 12867
+Executing built-in [kill]
+Hangup
+]0;ubuntu@kysully-cisc361-proj2-2655436: ~/workspace[01;32mkysully[00m:[01;34m~/workspace[00m $ ./mysh
+ [/home/ubuntu/workspace]> prompt prompt
+Executing built-in [prompt]
+prompt [/home/ubuntu/workspace]> prompt 361shell
+Executing built-in [prompt]
+361shell [/home/ubuntu/workspace]> alias gohome cd /home
+Executing built-in [alias]
+Adding alias: gohome
+added alias: cd /home
+361shell [/home/ubuntu/workspace]> gohome
+Executing built-in [cd]
+361shell [/home]> alias findls where ls
+Executing built-in [alias]
+Adding alias: findls
+added alias: where ls
+361shell [/home]> findls
+Executing built-in [where]
+/bin/ls
+/mnt/shared/sbin/ls
+361shell [/home]> printenv PATH
+Executing built-in [printenv]
+/home/ubuntu/.nvm/versions/node/v4.2.4/bin:/usr/local/rvm/gems/ruby-2.3.0/bin:/usr/local/rvm/gems/ruby-2.3.0@global/bin:/usr/local/rvm/rubies/ruby-2.3.0/bin:/mnt/shared/bin:/home/ubuntu/workspace/node_modules/.bin:/home/ubuntu/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/mnt/shared/sbin:/opt/gitl:/opt/go/bin:/mnt/shared/c9/app.nw/bin:/usr/local/rvm/bin
+361shell [/home]> printenv
+Executing built-in [printenv]
+MANPATH=/home/ubuntu/.nvm/versions/node/v4.2.4/share/man:/usr/local/rvm/rubies/ruby-2.3.0/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man:/usr/local/rvm/man
+APACHE_PID_FILE=/home/ubuntu/lib/apache2/run/apache2.pid
+rvm_bin_path=/usr/local/rvm/bin
+VIRTUALENVWRAPPER_SCRIPT=/usr/share/virtualenvwrapper/virtualenvwrapper.sh
+C9_SHARED=/mnt/shared
+GEM_HOME=/usr/local/rvm/gems/ruby-2.3.0
+C9_FULLNAME=Kyle Sullivan
+TERM=xterm-256color
+SHELL=/bin/bash
+APACHE_RUN_USER=ubuntu
+SSH_CLIENT=::ffff:10.240.0.194 58896 22
+IRBRC=/usr/local/rvm/rubies/ruby-2.3.0/.irbrc
+NVM_PATH=/home/ubuntu/.nvm/versions/node/v4.2.4/lib/node
+ISOUTPUTPANE=0
+C9_PORT=8080
+METEOR_IP=0.0.0.0
+PHPRC=/home/ubuntu/workspace
+MY_RUBY_HOME=/usr/local/rvm/rubies/ruby-2.3.0
+LC_ALL=C.UTF-8
+USER=ubuntu
+NVM_DIR=/home/ubuntu/.nvm
+LD_LIBRARY_PATH=~/.c9/local/lib
+_system_type=Linux
+rvm_path=/usr/local/rvm
+C9_UID=610716
+TMUX=/tmp/tmux-1000/cloud91.8,227,11
+rvm_prefix=/usr/local
+C9_IP=0.0.0.0
+PATH=/home/ubuntu/.nvm/versions/node/v4.2.4/bin:/usr/local/rvm/gems/ruby-2.3.0/bin:/usr/local/rvm/gems/ruby-2.3.0@global/bin:/usr/local/rvm/rubies/ruby-2.3.0/bin:/mnt/shared/bin:/home/ubuntu/workspace/node_modules/.bin:/home/ubuntu/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/mnt/shared/sbin:/opt/gitl:/opt/go/bin:/mnt/shared/c9/app.nw/bin:/usr/local/rvm/bin
+APACHE_LOG_DIR=/home/ubuntu/lib/apache2/log
+HGUSER=Kyle Sullivan
+C9_USER=kysully
+NVM_NODEJS_ORG_MIRROR=https://nodejs.org/dist
+PWD=/home/ubuntu/workspace
+LANG=C
+APACHE_RUN_GROUP=ubuntu
+NODE_PATH=/mnt/shared/lib/node_modules
+TMUX_PANE=%11
+_system_arch=x86_64
+_system_version=14.04
+C9_SH_EXECUTED=1
+rvm_version=1.26.11 (latest)
+SHLVL=5
+HOME=/home/ubuntu
+LANGUAGE=C.UTF-8
+GOROOT=/opt/go
+C9_PID=2655436
+_VIRTUALENVWRAPPER_API= mkvirtualenv rmvirtualenv lsvirtualenv showvirtualenv workon add2virtualenv cdsitepackages cdvirtualenv lssitepackages toggleglobalsitepackages cpvirtualenv setvirtualenvproject mkproject cdproject mktmpenv mkvirtualenv rmvirtualenv lsvirtualenv showvirtualenv workon add2virtualenv cdsitepackages cdvirtualenv lssitepackages toggleglobalsitepackages cpvirtualenv setvirtualenvproject mkproject cdproject mktmpenv mkvirtualenv rmvirtualenv lsvirtualenv showvirtualenv workon add2virtualenv cdsitepackages cdvirtualenv lssitepackages toggleglobalsitepackages cpvirtualenv setvirtualenvproject mkproject cdproject mktmpenv
+C9_PROJECT=cisc361-proj2
+LOGNAME=ubuntu
+SSH_CONNECTION=::ffff:10.240.0.194 60910 ::ffff:172.17.0.144 22
+GEM_PATH=/usr/local/rvm/gems/ruby-2.3.0:/usr/local/rvm/gems/ruby-2.3.0@global
+C9_EMAIL=kmsully@udel.edu
+NVM_BIN=/home/ubuntu/.nvm/versions/node/v4.2.4/bin
+GOPATH=/home/ubuntu/workspace
+LESSOPEN=| /usr/bin/lesspipe %s
+NVM_IOJS_ORG_MIRROR=https://iojs.org/dist
+EMAIL=kmsully@udel.edu
+PORT=8080
+METEOR_PORT=8080
+IP=0.0.0.0
+C9_HOSTNAME=cisc361-proj2-kysully.c9users.io
+APACHE_RUN_DIR=/home/ubuntu/lib/apache2/run
+APACHE_LOCK_DIR=/home/ubuntu/lib/apache2/lock
+RUBY_VERSION=ruby-2.3.0
+LESSCLOSE=/usr/bin/lesspipe %s %s
+_system_name=Ubuntu
+rvm_silence_path_mismatch_check_flag=1
+BASH_FUNC__gnomeopen%%=() {  if [ -e "$@" ]; then
+ c9 "$@";
+ return;
+ fi;
+ command xdg-open "$@"
+}
+BASH_FUNC__xdgopen%%=() {  if [ -e "$@" ]; then
+ c9 "$@";
+ return;
+ fi;
+ command xdg-open "$@"
+}
+_=./mysh
+361shell [/home]> setenv
+Executing built-in [setenv]
+Executing built-in [printenv]
+MANPATH=/home/ubuntu/.nvm/versions/node/v4.2.4/share/man:/usr/local/rvm/rubies/ruby-2.3.0/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man:/usr/local/rvm/man
+APACHE_PID_FILE=/home/ubuntu/lib/apache2/run/apache2.pid
+rvm_bin_path=/usr/local/rvm/bin
+VIRTUALENVWRAPPER_SCRIPT=/usr/share/virtualenvwrapper/virtualenvwrapper.sh
+C9_SHARED=/mnt/shared
+GEM_HOME=/usr/local/rvm/gems/ruby-2.3.0
+C9_FULLNAME=Kyle Sullivan
+TERM=xterm-256color
+SHELL=/bin/bash
+APACHE_RUN_USER=ubuntu
+SSH_CLIENT=::ffff:10.240.0.194 58896 22
+IRBRC=/usr/local/rvm/rubies/ruby-2.3.0/.irbrc
+NVM_PATH=/home/ubuntu/.nvm/versions/node/v4.2.4/lib/node
+ISOUTPUTPANE=0
+C9_PORT=8080
+METEOR_IP=0.0.0.0
+PHPRC=/home/ubuntu/workspace
+MY_RUBY_HOME=/usr/local/rvm/rubies/ruby-2.3.0
+LC_ALL=C.UTF-8
+USER=ubuntu
+NVM_DIR=/home/ubuntu/.nvm
+LD_LIBRARY_PATH=~/.c9/local/lib
+_system_type=Linux
+rvm_path=/usr/local/rvm
+C9_UID=610716
+TMUX=/tmp/tmux-1000/cloud91.8,227,11
+rvm_prefix=/usr/local
+C9_IP=0.0.0.0
+PATH=/home/ubuntu/.nvm/versions/node/v4.2.4/bin:/usr/local/rvm/gems/ruby-2.3.0/bin:/usr/local/rvm/gems/ruby-2.3.0@global/bin:/usr/local/rvm/rubies/ruby-2.3.0/bin:/mnt/shared/bin:/home/ubuntu/workspace/node_modules/.bin:/home/ubuntu/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/mnt/shared/sbin:/opt/gitl:/opt/go/bin:/mnt/shared/c9/app.nw/bin:/usr/local/rvm/bin
+APACHE_LOG_DIR=/home/ubuntu/lib/apache2/log
+HGUSER=Kyle Sullivan
+C9_USER=kysully
+NVM_NODEJS_ORG_MIRROR=https://nodejs.org/dist
+PWD=/home/ubuntu/workspace
+LANG=C
+APACHE_RUN_GROUP=ubuntu
+NODE_PATH=/mnt/shared/lib/node_modules
+TMUX_PANE=%11
+_system_arch=x86_64
+_system_version=14.04
+C9_SH_EXECUTED=1
+rvm_version=1.26.11 (latest)
+SHLVL=5
+HOME=/home/ubuntu
+LANGUAGE=C.UTF-8
+GOROOT=/opt/go
+C9_PID=2655436
+_VIRTUALENVWRAPPER_API= mkvirtualenv rmvirtualenv lsvirtualenv showvirtualenv workon add2virtualenv cdsitepackages cdvirtualenv lssitepackages toggleglobalsitepackages cpvirtualenv setvirtualenvproject mkproject cdproject mktmpenv mkvirtualenv rmvirtualenv lsvirtualenv showvirtualenv workon add2virtualenv cdsitepackages cdvirtualenv lssitepackages toggleglobalsitepackages cpvirtualenv setvirtualenvproject mkproject cdproject mktmpenv mkvirtualenv rmvirtualenv lsvirtualenv showvirtualenv workon add2virtualenv cdsitepackages cdvirtualenv lssitepackages toggleglobalsitepackages cpvirtualenv setvirtualenvproject mkproject cdproject mktmpenv
+C9_PROJECT=cisc361-proj2
+LOGNAME=ubuntu
+SSH_CONNECTION=::ffff:10.240.0.194 60910 ::ffff:172.17.0.144 22
+GEM_PATH=/usr/local/rvm/gems/ruby-2.3.0:/usr/local/rvm/gems/ruby-2.3.0@global
+C9_EMAIL=kmsully@udel.edu
+NVM_BIN=/home/ubuntu/.nvm/versions/node/v4.2.4/bin
+GOPATH=/home/ubuntu/workspace
+LESSOPEN=| /usr/bin/lesspipe %s
+NVM_IOJS_ORG_MIRROR=https://iojs.org/dist
+EMAIL=kmsully@udel.edu
+PORT=8080
+METEOR_PORT=8080
+IP=0.0.0.0
+C9_HOSTNAME=cisc361-proj2-kysully.c9users.io
+APACHE_RUN_DIR=/home/ubuntu/lib/apache2/run
+APACHE_LOCK_DIR=/home/ubuntu/lib/apache2/lock
+RUBY_VERSION=ruby-2.3.0
+LESSCLOSE=/usr/bin/lesspipe %s %s
+_system_name=Ubuntu
+rvm_silence_path_mismatch_check_flag=1
+BASH_FUNC__gnomeopen%%=() {  if [ -e "$@" ]; then
+ c9 "$@";
+ return;
+ fi;
+ command xdg-open "$@"
+}
+BASH_FUNC__xdgopen%%=() {  if [ -e "$@" ]; then
+ c9 "$@";
+ return;
+ fi;
+ command xdg-open "$@"
+}
+_=./mysh
+361shell [/home]> setenv TEST
+Executing built-in [setenv]
+361shell [/home]> printenv TEST
+Executing built-in [printenv]
+
+361shell [/home]> setenv TEST testing
+Executing built-in [setenv]
+361shell [/home]> printenv TEST
+Executing built-in [printenv]
+testing
+361shell [/home]> set TEST testing more
+set: Command not found.
+361shell [/home]> setenv HOME /
+Executing built-in [setenv]
+New HOME = /
+361shell [/home]> cd
+Executing built-in [cd]
+361shell [/]> pwd
+Executing built-in [pwd]
+/
+361shell [/]> exit
+]0;ubuntu@kysully-cisc361-proj2-2655436: ~/workspace[01;32mkysully[00m:[01;34m~/workspace[00m $ exit
+exit
+
+Script done on Fri 11 Mar 2016 04:09:15 AM UTC

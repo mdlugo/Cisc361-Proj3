@@ -1,0 +1,22 @@
+Script started on Thu 18 Feb 2016 10:52:06 PM EST
+[7mmlb2[27m[31] [~/CISC361/]$ make mycp
+make: `mycp' is up to date.
+[7mmlb2[27m[32] [~/CISC361/]$ ./test1
+Hello World, this is test1 speaking
+[7mmlb2[27m[33] [~/CISC361/]$ ./test2
+Good bye world. Love -test2
+[7mmlb2[27m[34] [~/CISC361/]$ rm test3
+rm: remove regular file `test3'? y
+[7mmlb2[27m[35] [~/CISC361/]$ ./mycp test1 test3
+[7mmlb2[27m[36] [~/CISC361/]$ ./test3
+Hello World, this is test1 speaking
+[7mmlb2[27m[37] [~/CISC361/]$ ./mycp test2 test3
+Do you want to overwrite 'test3' [y/n]
+=> y
+
+Overwritting test3 with the contents of 'test2'
+[7mmlb2[27m[38] [~/CISC361/]$ ./test3
+Good bye world. Love -test2
+[7mmlb2[27m[39] [~/CISC361/]$ exit
+
+Script done on Thu 18 Feb 2016 10:53:43 PM EST

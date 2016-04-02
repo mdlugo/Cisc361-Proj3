@@ -1,0 +1,64 @@
+Script started on Fri 11 Mar 2016 12:57:40 AM UTC
+]0;ubuntu@kysully-cisc361-proj2-2655436: ~/workspace[01;32mkysully[00m:[01;34m~/workspace[00m $ ./mysh
+ [/home/ubuntu/workspace]> file *
+/usr/bin/file
+/usr/bin/file
+README.md:       ASCII text
+get_path.c:      C source, ASCII text, with CRLF line terminators
+get_path.h:      C source, ASCII text, with CRLF line terminators
+get_path.o:      ELF 64-bit LSB  relocatable, x86-64, version 1 (SYSV), not stripped
+get_path_main.c: C source, ASCII text, with CRLF line terminators
+globtest:        ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=5d71d958b63b5ecc9cb0ac85604e54ff57c39430, not stripped
+globtest.c:      C source, ASCII text
+hello:           ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=a496619e5b361c3a67f06ab6c28c1783cd60252c, not stripped
+hello.c:         C source, ASCII text
+homework1:       ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=84b28c7c43bfd6f3679ad391fc7aa03fa30cacef, not stripped
+homework1.c:     C source, ASCII text
+main.c:          C source, ASCII text, with CRLF line terminators
+makefile:        ASCII text
+mycp_script:     ASCII text, with CRLF, CR, LF line terminators, with escape sequences
+mysh:            ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=8d0629e9b5adf79d32efca302153e9717982bb73, not stripped
+sh.c:            C source, ASCII text, with CRLF line terminators
+sh.h:            C source, ASCII text, with CRLF line terminators
+sh.o:            ELF 64-bit LSB  relocatable, x86-64, version 1 (SYSV), not stripped
+strmap.c:        C source, ASCII text, with CRLF line terminators
+strmap.h:        C source, ASCII text, with CRLF line terminators
+strmap.o:        ELF 64-bit LSB  relocatable, x86-64, version 1 (SYSV), not stripped
+testFile:        ASCII text, with CRLF, LF line terminators, with escape sequences, with overstriking
+testFile2:       empty 
+testFile~:       ASCII text, with CRLF, LF line terminators, with escape sequences, with overstriking
+wildcard:        ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=efcbad44f13bb0387f5f05a34da782e839343c2d, not stripped
+wildcard.c:      C source, ASCII text
+ [/home/ubuntu/workspace]> ls *
+/bin/ls
+/bin/ls
+README.md   get_path.h	get_path_main.c  globtest.c  hello.c	homework1.c  makefile	  mysh	sh.h  strmap.c	strmap.o  testFile2  wildcard
+get_path.c  get_path.o	globtest	 hello	     homework1	main.c	     mycp_script  sh.c	sh.o  strmap.h	testFile  testFile~  wildcard.c
+ [/home/ubuntu/workspace]> ls *.c
+/bin/ls
+/bin/ls
+get_path.c  get_path_main.c  globtest.c  hello.c  homework1.c  main.c  sh.c  strmap.c  wildcard.c
+ [/home/ubuntu/workspace]> ls -l sh.*
+/bin/ls
+/bin/ls
+-rw-r--r-- 1 ubuntu ubuntu 19325 Mar 11 00:44 sh.c
+-rw-r--r-- 1 ubuntu ubuntu  1209 Mar 10 01:32 sh.h
+-rw-r--r-- 1 ubuntu ubuntu 38480 Mar 11 00:44 sh.o
+ [/home/ubuntu/workspace]> ls -l s*.c
+/bin/ls
+/bin/ls
+-rw-r--r-- 1 ubuntu ubuntu 19325 Mar 11 00:44 sh.c
+-rw-r--r-- 1 ubuntu ubuntu 15153 Mar  4 23:34 strmap.c
+ [/home/ubuntu/workspace]> ls -l s*h.c
+/bin/ls
+/bin/ls
+-rw-r--r-- 1 ubuntu ubuntu 19325 Mar 11 00:44 sh.c
+ [/home/ubuntu/workspace]> ls ?h.c
+/bin/ls
+/bin/ls
+sh.c
+ [/home/ubuntu/workspace]> ls ?sh.    sh.?
+/bin/ls
+/bin/ls
+sh.c  sh.h  sh.o
+ [/home/ubuntu/workspace]> ls *.?
