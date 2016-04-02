@@ -22,6 +22,10 @@
 #include "strmap.h"
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <pthread.h>
+#ifdef HAVE_KSTAT
+#include <kstat.h>
+#endif
 
 /*  Global Variables */
 char *prompt, *commandline;
@@ -41,7 +45,7 @@ struct pathelement *pathlist;
 typedef enum { false, true } bool;
 StrMap *alias_table; //to store the alias information
 char buf[255];
-
+float warnlevel = -1;
 /**
  * sh
  * - Main function of mysh
@@ -634,6 +638,84 @@ int runExternalCommand(int argsct, char **args, char **envp){
   return 1;
 }
 
+static void *myWarnloadThread(void *param){
+  int i = 0;
+  double load[1];
+  const char *name = param;
+  while(1){
+    get_load(load);
+    printf("load->%d\n", load[0]);
+    if(load[0] > warnlevel){
+      printf("Warning load level is %d\n", load[0]);
+    }
+    printf("hello from %s [%f]\n", name, i++);
+    sleep(30);
+    if(warnlevel == 0.0){
+      warnlevel = -1;
+      pthread_exit(0);
+    }
+  }
+}
+
+int get_load(double *loads){
+#ifdef HAVE_KSTAT
+  kstat_ctl_t *kc;
+  kstat_t *ksp;
+  kstat_named_t *kn;
+
+  kc = kstat_open();
+  if (kc == 0)
+  {
+    perror("kstat_open");
+    exit(1);
+  }
+
+  ksp = kstat_lookup(kc, "unix", 0, "system_misc");
+  if (ksp == 0)
+  {
+    perror("kstat_lookup");
+    exit(1);
+  }
+  if (kstat_read(kc, ksp,0) == -1) 
+  {
+    perror("kstat_read");
+    exit(1);
+  }
+
+  kn = kstat_data_lookup(ksp, "avenrun_1min");
+  if (kn == 0) 
+  {
+    fprintf(stderr,"not found\n");
+    exit(1);
+  }
+  loads[0] = kn->value.ul/(FSCALE/100);
+
+  kn = kstat_data_lookup(ksp, "avenrun_5min");
+  if (kn == 0)
+  {
+    fprintf(stderr,"not found\n");
+    exit(1);
+  }
+  loads[1] = kn->value.ul/(FSCALE/100);
+
+  kn = kstat_data_lookup(ksp, "avenrun_15min");
+  if (kn == 0) 
+  {
+    fprintf(stderr,"not found\n");
+    exit(1);
+  }
+  loads[2] = kn->value.ul/(FSCALE/100);
+
+  kstat_close(kc);
+  return 0;
+#else
+  /* yes, this isn't right */
+  loads[0] = loads[1] = loads[2] = 0;
+  return -1;
+#endif
+}
+
+
 /**
  * runBuiltInCommand
  * - takes in a command, arguments, and an argument count
@@ -816,6 +898,27 @@ int runBuiltInCommand(char *command, char **args, int argsct){
      for(i = offset; i < historyct; i++){
        printf("%s\n", history[i]);
      }
+  }
+  /*  warnload  */
+  else if(strcmp(command, "warnload") == 0){
+    printf("Executing built-in [warnload]\n");
+    if( argsct > 2){
+      fprintf(stderr, "warnload: Too many arguments.\n"); 
+    }else if(argsct < 2){
+      fprintf(stderr, "Usage: warnload <value>\n"); 
+    }else if (argsct == 2){
+      printf("I am running warnload correctly\n");
+      if(warnlevel == -1){
+	int i = 0;
+	pthread_t tid1;
+	warnlevel = atof(args[1]);
+	printf("warnlevel is %f\n",warnlevel);
+	pthread_create(&tid1, NULL, myWarnloadThread, "Thread 1");
+      }else{
+	warnlevel = atof(args[1]);
+	printf("warnlevel is %f\n",warnlevel);
+      }
+    }
   }
   /*  setenv  */
   else if(strcmp(command, "setenv") == 0){
