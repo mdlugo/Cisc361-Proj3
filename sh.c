@@ -639,17 +639,19 @@ int runExternalCommand(int argsct, char **args, char **envp){
 }
 
 static void *myWarnloadThread(void *param){
-  int i = 0;
-  double load[1];
+  int count = 0;
+  double loads[1];
   const char *name = param;
   while(1){
-    get_load(load);
-    printf("load->%d\n", load[0]);
-    if(load[0] > warnlevel){
-      printf("Warning load level is %d\n", load[0]);
+    if(get_load(loads)){
+      printf("getload %d\n", get_load(loads)); 
+      printf("load->%.2lf\n", loads[0]/100);
+      if(loads[0]/100 > warnlevel){
+	printf("Warning load level is %.2lf\n", loads[0]/100);
+      }
     }
-    printf("hello from %s [%f]\n", name, i++);
-    sleep(30);
+    printf("hello from %s [%d]\n", name, count++);
+    sleep(1);
     if(warnlevel == 0.0){
       warnlevel = -1;
       pthread_exit(0);
@@ -689,6 +691,7 @@ int get_load(double *loads){
     exit(1);
   }
   loads[0] = kn->value.ul/(FSCALE/100);
+  printf("LOADS[0]->%.2lf",loads[0]/100);
 
   kn = kstat_data_lookup(ksp, "avenrun_5min");
   if (kn == 0)

@@ -34,9 +34,20 @@ int runBuiltInCommand(char *command, char **args, int argsct);
 void shell_INT_handler(int sig);
 void shell_ALARM_handler(int sig);
 
+static void *myWarnloadThread(void *param);
+int get_load(double *loads);
+
 /*  Constants */
 #define PROMPTMAX 32
 #define MAXARGS 10
 #define MAXALIAS 1024
 #define MAXHISTORY 5012
 #define DEFAULTHISTORY 10
+
+
+
+
+
+
+
+
